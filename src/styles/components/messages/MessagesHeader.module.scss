@@ -1,0 +1,42 @@
+@use "../../helpers" as *;
+@use "../UI/button";
+
+.messages_header {
+  background-color: var(--color-dark);
+  padding: rem(12);
+  display: flex;
+  justify-content: space-between;
+
+  &-main {
+    display: flex;
+    gap: 12px;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-avatar {
+    grid-area: icon;
+    width: rem(45);
+    height: rem(45);
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  &-name {
+    font-weight: 700;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  &-count {
+    opacity: 0.8;
+    font-size: rem(12);
+  }
+}

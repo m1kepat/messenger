@@ -1,0 +1,54 @@
+@use "../../helpers" as *;
+
+.list_item {
+  background-color: var(--color-gray-10);
+  padding: rem(10) rem(12);
+  border-radius: rem(8);
+  gap: rem(8) rem(12);
+  width: 30vw;
+  align-items: center;
+  display: flex;
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &-avatar {
+    width: rem(40);
+    height: rem(40);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    font-weight: 700;
+    align-self: start;
+    @include flex-center;
+  }
+
+  &-message {
+    grid-area: message;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  &-time {
+    grid-area: time;
+    align-self: start;
+    text-align: right;
+  }
+
+  &-username {
+    grid-area: username;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  @include tablet {
+    width: 55vw;
+  }
+
+  @include mobile {
+    width: 73vw;
+  }
+}

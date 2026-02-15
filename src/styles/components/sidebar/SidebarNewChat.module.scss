@@ -1,0 +1,91 @@
+@use "../../helpers" as *;
+@use "../UI/button";
+@use "../UI/modal";
+
+.modal {
+  animation: scaleUp 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+  &.out {
+    animation: scaleDown 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-participants {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      max-height: rem(300);
+      gap: rem(12);
+      overflow: auto;
+    }
+
+    &-item {
+      background-color: var(--color-dark-20);
+      border-radius: rem(8);
+      transition: background-color 0.2s;
+      gap: rem(12);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: rem(10) rem(12);
+
+      &:hover {
+        background-color: var(--color-gray);
+      }
+
+      &.selected {
+        background-color: var(--color-accent);
+      }
+    }
+
+    &-username {
+      flex: 1;
+    }
+
+    &-checkbox {
+      width: rem(18);
+      height: rem(18);
+      margin: 0;
+      cursor: pointer;
+
+      &:checked {
+        accent-color: var(--color-accent);
+      }
+    }
+  }
+}
+
+.error {
+  color: var(--color-red);
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}

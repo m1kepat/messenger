@@ -1,0 +1,12 @@
+@use "../../helpers" as *;
+@use "../UI/button";
+
+.notFound {
+  @include flex-center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 2vh;
+  &-label {
+    @include fluid-text(150, 70);
+  }
+}

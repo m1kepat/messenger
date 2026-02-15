@@ -1,0 +1,95 @@
+@use "../../helpers" as *;
+@use "../UI/button";
+
+.list_item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: rem(12);
+  background-color: var(--color-gray);
+  padding: rem(12);
+  border-radius: rem(8);
+  align-items: center;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
+  &-avatar {
+    @include square(rem(50));
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    @include flex-center;
+    font-weight: 700;
+  }
+
+  &-info {
+    display: grid;
+    grid-template-areas:
+      "name name date "
+      "message message time";
+    gap: rem(10);
+    width: 100%;
+  }
+
+  &-name {
+    grid-area: name;
+    font-weight: 700;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-overflow: ellipsis;
+  }
+
+  &-time {
+    grid-area: time;
+    opacity: 0.8;
+    text-align: right;
+  }
+
+  &-date {
+    grid-area: date;
+    opacity: 0.8;
+    text-align: right;
+  }
+
+  &-message {
+    grid-area: message;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @include laptop {
+    gap: rem(10);
+    padding: rem(10);
+
+    &-time {
+      display: none;
+    }
+
+    &-date {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    gap: rem(10);
+    padding: rem(10);
+    font-size: rem(20);
+
+    &-avatar {
+      width: 60px;
+    }
+
+    &-message {
+      max-width: 20vw;
+    }
+
+    &-time {
+      display: block;
+      text-align: right;
+    }
+
+    &-date {
+      display: block;
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,209 @@
+@use "../../helpers" as *;
+@use "../UI/button";
+
+.info {
+  background-color: var(--color-gray);
+  padding: rem(25);
+  border-radius: rem(20);
+  width: 22vw;
+  box-shadow: 0 rem(10) rem(30) rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: rem(18);
+  height: 80vh;
+
+  @include abs-center;
+  min-height: 0;
+
+  @include tablet {
+    width: 65vw;
+  }
+
+  @include mobile {
+    width: 95vw;
+    padding: rem(20);
+  }
+
+  animation: scaleUp 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+  &.out {
+    animation: scaleDown 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+
+  &-details {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+
+    h2 {
+      word-break: break-word;
+      text-align: center;
+    }
+  }
+
+  &-name {
+    font-weight: 700;
+    font-size: rem(40);
+
+    @include mobile {
+      font-size: rem(32);
+    }
+  }
+
+  &-participants {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+
+    &-label {
+      font-size: rem(24);
+      flex-shrink: 0;
+
+      @include mobile {
+        font-size: rem(20);
+      }
+    }
+
+    &-count {
+      opacity: 0.8;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12);
+      overflow-y: auto;
+      min-height: 0;
+      flex: 1;
+    }
+
+    &-item {
+      background-color: var(--color-dark-20);
+      border-radius: rem(8);
+      transition: background-color 0.2s;
+      gap: rem(12);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: rem(10) rem(12);
+      flex-shrink: 1;
+      width: 100%;
+      box-sizing: border-box;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: rem(8);
+
+        button {
+          width: 100%;
+        }
+      }
+
+      &:hover {
+        background-color: var(--color-gray);
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        word-break: break-word;
+      }
+
+      &.selected {
+        background-color: var(--color-accent);
+      }
+    }
+
+    &-details {
+      display: flex;
+      align-items: center;
+      gap: rem(12);
+      min-width: 0;
+    }
+
+    &-avatar {
+      width: rem(36);
+      height: rem(36);
+      border-radius: 50%;
+      background-color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    &-username {
+      word-break: break-word;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      gap: rem(18);
+      min-height: 0;
+      overflow: hidden;
+      flex: 0 0 auto;
+
+      .info-participants-list {
+        flex: 1;
+        overflow-y: auto;
+        min-height: 0;
+        max-height: 200px;
+      }
+    }
+
+    &-checkbox {
+      width: rem(18);
+      aspect-ratio: 1;
+      margin: 0;
+      cursor: pointer;
+      justify-self: end;
+
+      @include mobile {
+        justify-self: start;
+      }
+
+      &:checked {
+        accent-color: var(--color-accent);
+      }
+    }
+
+    &-label-checkbox {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      cursor: pointer;
+      word-break: break-word;
+    }
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}

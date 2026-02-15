@@ -1,0 +1,14 @@
+@use "../../helpers" as *;
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  overflow: auto;
+  max-height: 100vh;
+}
+
+.error {
+  color: var(--color-red);
+  align-self: center;
+}

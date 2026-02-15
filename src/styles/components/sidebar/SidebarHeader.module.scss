@@ -1,0 +1,16 @@
+@use "../../helpers" as *;
+@use "../UI/button";
+@use "../UI/input";
+
+.sidebar_header {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+
+  &-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

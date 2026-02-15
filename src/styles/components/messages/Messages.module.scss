@@ -1,0 +1,29 @@
+@use "../../helpers" as *;
+
+.messages {
+  flex: 1;
+  background-color: var(--color-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 77vw;
+
+  &-main {
+    display: flex;
+    gap: rem(6);
+    flex-direction: column;
+    padding: rem(10);
+  }
+
+  @include tablet {
+    width: 100%;
+
+    &-closed {
+      display: none;
+    }
+  }
+}
+
+.error {
+  color: var(--color-red);
+}

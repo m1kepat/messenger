@@ -1,0 +1,26 @@
+@use "../../helpers" as *;
+
+.sidebar {
+  background-color: var(--color-dark);
+  padding: rem(18);
+  border-right: rem(1) solid var(--color-gray-10);
+  width: 23vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    gap: rem(18);
+  }
+
+  @include tablet {
+    width: 100%;
+    border-right: none;
+
+    &-closed {
+      display: none;
+    }
+  }
+}

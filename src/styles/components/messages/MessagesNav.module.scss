@@ -1,0 +1,53 @@
+@use "../../helpers" as *;
+@use "../UI/button";
+
+.nav {
+  display: flex;
+  gap: rem(12);
+
+  &-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+    right: 0;
+    top: 6vh;
+    width: 11vw;
+    background-color: var(--color-gray);
+    box-shadow: 0 rem(10) rem(30) rgba(0, 0, 0, 0.3);
+    padding: rem(12);
+    border-radius: rem(8);
+    animation: scaleUp 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+    &.out {
+      animation: scaleDown 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    @include tablet {
+      @include abs-center;
+      width: 65vw;
+    }
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}

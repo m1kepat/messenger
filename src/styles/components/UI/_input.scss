@@ -1,0 +1,12 @@
+@use "../../helpers" as *;
+
+input {
+  width: 100%;
+  padding: rem(10);
+  background-color: transparent;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: rem(1) solid var(--color-light);
+  color: var(--color-light);
+  font-size: rem(17);
+}

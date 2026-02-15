@@ -1,0 +1,15 @@
+@use "../../helpers" as *;
+
+.input {
+  background-color: transparent;
+  border: none;
+  padding: rem(16);
+  background-color: var(--color-gray-10);
+  border-radius: rem(12);
+  width: 68vw;
+  align-self: center;
+
+  @include tablet {
+    width: 90vw;
+  }
+}

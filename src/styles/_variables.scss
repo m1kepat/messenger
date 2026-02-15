@@ -1,0 +1,23 @@
+@use "helpers" as *;
+
+:root {
+  --color-light: #fff;
+
+  --color-dark: #191919;
+  --color-dark-10: #262626;
+  --color-dark-20: #292929;
+
+  --color-gray: #323232;
+  --color-gray-10: #3e3e3e;
+  --color-gray-20: #a1a1a1;
+
+  --color-accent: #475b9c;
+
+  --color-red: #ff1e00;
+
+  --border: #{rem(2)} solid var(--color-light);
+
+  --font-family: "Roboto", sans-serif;
+
+  --transition-duration: 0.2s;
+}

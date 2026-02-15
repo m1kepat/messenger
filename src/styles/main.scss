@@ -1,0 +1,26 @@
+@use "normalize";
+@use "fonts";
+@use "variables";
+@use "utils";
+@use "globals";
+
+@use "./components/UI/button";
+@use "./components/UI/input";
+@use "./components/UI/modal";
+@use "./components/UI/loader";
+@use "./components/UI/error";
+
+@use "./components/pages/Login.module.scss";
+@use "./components/pages/Chat.module.scss";
+
+@use "./components/messages/Messages.module.scss";
+@use "./components/messages/MessagesHeader.module.scss";
+@use "./components/messages/MessagesList.module.scss";
+@use "./components/messages/MessagesItem.module.scss";
+@use "./components/messages/MessagesInput.module.scss";
+
+@use "./components/sidebar/Sidebar.module.scss";
+@use "./components/sidebar/SidebarHeader.module.scss";
+@use "./components/sidebar/SidebarList.module.scss";
+@use "./components/sidebar/SidebarItem.module.scss";
+@use "./components/sidebar/SidebarNewChat.module.scss";

@@ -1,0 +1,136 @@
+@use "helpers" as *;
+
+*::-webkit-scrollbar {
+  width: rem(6);
+  height: rem(6);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-gray-10);
+  border-radius: rem(3);
+}
+
+*::placeholder {
+  color: var(--color-gray-20);
+}
+
+body {
+  @include fluid-text(18, 15);
+  display: flex;
+  flex-direction: column;
+  letter-spacing: -0.03em;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  overflow: hidden;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin: 0;
+  color: var(--color-light);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-weight: 500;
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: 600;
+}
+
+h1,
+.h1 {
+  @include fluid-text(70, 30);
+
+  line-height: 1.2;
+}
+h2,
+.h2 {
+  @include fluid-text(58, 28);
+
+  line-height: 1.3;
+}
+
+h3,
+.h3 {
+  @include fluid-text(40, 24);
+}
+
+h4,
+.h4 {
+  @include fluid-text(26, 18);
+}
+
+h5,
+.h5 {
+  @include fluid-text(24, 18);
+}
+
+h6,
+.h6 {
+  @include fluid-text(20, 16);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+
+  @include hover {
+    color: var(--color-accent);
+  }
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  text-decoration: none !important;
+}
+
+a,
+button {
+  &[aria-label] {
+    position: relative;
+
+    &::before {
+      content: "";
+
+      @include abs-center;
+      @include square(rem(44));
+    }
+  }
+}

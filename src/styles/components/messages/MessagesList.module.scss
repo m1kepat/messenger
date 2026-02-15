@@ -1,0 +1,10 @@
+@use "../../helpers" as *;
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  overflow: auto;
+  align-items: center;
+  max-height: 82vh;
+}
